@@ -44,8 +44,9 @@ export default function HealthMap() {
       .domain(d3.extent(data, (d: DataPoint) => d.y) as [number, number])
       .range([height - margin.bottom, margin.top]);
 
-    // Use a color scale for the 28 clusters
-    const color = d3.scaleOrdinal(d3.schemeCategory10);
+    const color = d3.scaleOrdinal()
+      .domain([...data.map(d => d.cluster.toString())])
+      .range(['#38bdf8', '#fbbf24', '#f87171', '#34d399', '#a78bfa', '#fb7185', '#60a5fa', '#818cf8', '#c084fc', '#e879f9', '#2dd4bf']); // Premium bright tailwind colors
 
     const g = svg.append("g");
 
@@ -57,8 +58,13 @@ export default function HealthMap() {
       .attr("cx", (d: DataPoint) => x(d.x))
       .attr("cy", (d: DataPoint) => y(d.y))
       .attr("r", 4)
-      .attr("fill", (d: DataPoint) => color(d.cluster.toString()))
-      .attr("opacity", 0.7)
+      .attr("fill", (d: DataPoint) => color(d.cluster.toString()) as string)
+      .attr("opacity", 0.6)
+      .attr("stroke", "rgba(255,255,255,0.1)")
+      .attr("stroke-width", 0.5)
+      .style("filter", "drop-shadow(0px 0px 3px rgba(56, 189, 248, 0.3))")
+      .on("mouseover", function() { d3.select(this).attr("opacity", 1).attr("r", 7).attr("stroke", "#fff"); })
+      .on("mouseout", function() { d3.select(this).attr("opacity", 0.6).attr("r", 4).attr("stroke", "rgba(255,255,255,0.1)"); })
       .append("title")
       .text((d: DataPoint) => `Cluster ${d.cluster}`);
 
