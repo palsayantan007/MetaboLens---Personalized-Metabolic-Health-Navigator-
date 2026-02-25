@@ -1,0 +1,13 @@
+{
+  "validation_silhouette": 0.558609127998352,
+  "baseline_silhouette": 0.747,
+  "improvement_percentage": -25.21966157987255,
+  "n_clusters": 28,
+  "n_noise_samples": 74,
+  "noise_percentage": 3.733602421796166,
+  "embedding_dim_original": 256,
+  "embedding_dim_final": 64,
+  "preprocessing_method": "UMAP-64",
+  "clustering_method": "HDBSCAN (optimized)",
+  "timestamp": "2025-10-19T13:12:21.458566"
+}
