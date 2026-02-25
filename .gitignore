@@ -1,0 +1,103 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
+.cache/
+.temp/
+.tmp/
+*.bak
+
+# Debug
+.pnpm-debug.log*
+
+# Vercel
+.vercel
+
+# PWA
+**/public/sw.js
+**/public/workbox-*.js
+**/public/sw.js.map
+**/public/workbox-*.js.map
+
+# Copilot session state (local only)
+.copilot/
+
+# Generated reports
+*.pdf
+
+# Data files that shouldn't be committed (if sensitive)
+# Uncomment if needed:
+# data/*.csv
